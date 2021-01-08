@@ -21,7 +21,43 @@ const routes = [
     name: 'categories',
     meta: { layout: 'main' },
     component: () => import('../views/Categories.vue')
-  }
+  },
+  {
+    path: '/detailRecord',
+    name: 'detailRecord',
+    meta: { layout: 'main' },
+    component: () => import('../views/DetailRecord.vue')
+  },
+  {
+    path: '/history',
+    name: 'history',
+    meta: { layout: 'main' },
+    component: () => import('../views/History.vue')
+  },
+  {
+    path: '/main',
+    name: 'main',
+    meta: { layout: 'main' },
+    component: () => import('../views/Main.vue')
+  },
+  {
+    path: '/planning',
+    name: 'planning',
+    meta: { layout: 'main' },
+    component: () => import('../views/Planning.vue')
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    meta: { layout: 'main' },
+    component: () => import('../views/Profile.vue')
+  },
+  {
+    path: '/record',
+    name: 'record',
+    meta: { layout: 'main' },
+    component: () => import('../views/Record.vue')
+  },
 ]
 
 const router = new VueRouter({
