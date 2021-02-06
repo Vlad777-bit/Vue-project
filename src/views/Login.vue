@@ -6,7 +6,7 @@
         <input
             id="email"
             type="text"
-            v-model.trim="email"
+            v-model.trim="email" 
             :class="{ invalid: ($v.email.$dirty && !$v.email.required) || ($v.email.$dirty && !$v.email.email) }"
         >
         <label for="email">Email</label>
@@ -65,18 +65,23 @@
 </template>
 
 <script>
-import {email, required, minLength} from 'vuelidate/lib/validators'
+import { email, required, minLength } from 'vuelidate/lib/validators'
 import messages from '@/utils/messages'
 
 export default {
   name: 'login',
+  metaInfo() {
+    return {
+      title: this.$title('Login')
+    }
+  },
   data: () => ({
     email: '',
     password: '',
   }),
   validations: {
-    email: {email, required},
-    password: {required, minLength: minLength(6)},
+    email: { email, required },
+    password: { required, minLength: minLength(6) },
   },
   mounted() {
     if (messages[this.$route.query.message]) {
